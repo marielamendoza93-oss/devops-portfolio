@@ -1,27 +1,35 @@
-name: System Monitor CI (with Logs)
+name: Full System Monitoring CI
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  run-monitor:
+  system-monitor:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Make script executable
-        run: chmod +x linux/system_monitor.sh
-
-      - name: Run system monitor and save output
+      - name: Setup environment
         run: |
-          mkdir -p logs
-          bash linux/system_monitor.sh > logs/system_report.log
+          sudo apt-get update
+          sudo apt-get install -y bash python3 python3-pip
+          pip3 install psutil
 
-      - name: Upload log artifact
+      - name: Run Bash system monitor
+        run: |
+          chmod +x linux/system_monitor.sh
+          mkdir -p logs
+          bash linux/system_monitor.sh > logs/bash_report.log
+
+      - name: Run Python system monitor
+        run: |
+          python3 python-scripts/system_monitor.py > logs/python_report.log
+
+      - name: Upload all logs as artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: system-monitor-log
-          path: logs/system_report.log
+          name: system-monitor-reports
+          path: logs/
