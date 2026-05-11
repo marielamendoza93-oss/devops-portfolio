@@ -2,13 +2,13 @@
 
 
 
-\## 🚀 Overview
+\## Overview
 
-This repository demonstrates my foundational DevOps skills including Linux automation, Git version control, CI/CD pipelines, and system monitoring.
+This repository demonstrates a hands-on DevOps learning journey focused on building real-world automation, monitoring systems, and CI/CD pipelines.
 
 
 
-It is built as a hands-on learning portfolio with real-world style scripts and workflows.
+It combines Bash scripting, Python automation, and GitHub Actions to simulate production-style system monitoring workflows.
 
 
 
@@ -16,17 +16,17 @@ It is built as a hands-on learning portfolio with real-world style scripts and w
 
 
 
-\## 🧰 Tools \& Technologies
+\## Tech Stack
 
 \- Linux (Bash scripting)
+
+\- Python (automation + system monitoring)
 
 \- Git \& GitHub
 
 \- GitHub Actions (CI/CD)
 
-\- System monitoring automation
-
-\- Basic DevOps workflow design
+\- psutil (system metrics)
 
 
 
@@ -34,37 +34,37 @@ It is built as a hands-on learning portfolio with real-world style scripts and w
 
 
 
-\## 📁 Project Structure
+\## Architecture
+
+
+
+Local Development → GitHub → GitHub Actions CI Runner → System Monitoring Scripts → Logs + Artifacts
+
+
+
+\---
+
+
+
+\## Project Structure
 
 
 
 \### linux/
 
-Contains Bash scripts for system monitoring and automation.
+Bash-based system monitoring script.
 
 
 
-\### cicd/
+\### python-scripts/
 
-Contains GitHub Actions workflows that automate script execution and logging.
-
-
-
-\### python-scripts/ (in progress)
-
-Future automation scripts using Python.
+Python-based system monitoring tool.
 
 
 
-\### kubernetes/ (planned)
+\### .github/workflows/
 
-Container orchestration and deployment practice.
-
-
-
-\### projects/
-
-End-to-end DevOps-style mini projects combining multiple tools.
+CI/CD pipeline using GitHub Actions.
 
 
 
@@ -72,43 +72,31 @@ End-to-end DevOps-style mini projects combining multiple tools.
 
 
 
-\## ⚙️ Current Projects
+\## Features
 
 
 
-\### System Monitoring Script
+\### System Monitoring
 
-\- Monitors CPU, memory, disk usage, and uptime
+\- CPU usage tracking
 
-\- Logs output to file
+\- Memory usage monitoring
 
-\- Runs locally and in CI pipeline
+\- Disk usage reporting
 
-
-
-\### CI/CD Pipeline
-
-\- Automatically runs system monitoring script on every push
-
-\- Generates logs
-
-\- Stores artifacts via GitHub Actions
+\- Boot time tracking
 
 
 
-\---
+\### CI/CD Automation
 
+\- Automated script execution on push
 
+\- Multi-language support (Bash + Python)
 
-\## 🎯 Goals
+\- Log generation
 
-\- Strengthen DevOps automation skills
-
-\- Build cloud-ready projects
-
-\- Learn Kubernetes and container orchestration
-
-\- Prepare for junior DevOps engineer roles
+\- Artifact storage in GitHub Actions
 
 
 
@@ -116,7 +104,39 @@ End-to-end DevOps-style mini projects combining multiple tools.
 
 
 
-\## 📌 Status
+\## What This Demonstrates
 
-Actively building and improving DevOps skills through hands-on projects.
+\- Linux scripting ability
+
+\- Python automation skills
+
+\- CI/CD pipeline understanding
+
+\- DevOps workflow design
+
+\- System monitoring concepts
+
+
+
+\---
+
+
+
+\## Status
+
+Actively evolving DevOps portfolio project focused on automation, cloud workflows, and infrastructure concepts.
+
+
+
+\---
+
+
+
+\## Next Steps
+
+\- Add Docker containerization
+
+\- Add Kubernetes deployment basics
+
+\- Expand monitoring to cloud systems (AWS/Azure)
 
