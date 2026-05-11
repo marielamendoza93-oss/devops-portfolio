@@ -1,4 +1,4 @@
-name: System Monitor CI
+name: System Monitor CI (with Logs)
 
 on:
   push:
@@ -12,7 +12,16 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Run system monitor script
+      - name: Make script executable
+        run: chmod +x linux/system_monitor.sh
+
+      - name: Run system monitor and save output
         run: |
-          chmod +x linux/system_monitor.sh
-          bash linux/system_monitor.sh
+          mkdir -p logs
+          bash linux/system_monitor.sh > logs/system_report.log
+
+      - name: Upload log artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: system-monitor-log
+          path: logs/system_report.log
