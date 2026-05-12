@@ -1,14 +1,14 @@
-\# DevOps Portfolio - Marie
+\# DevOps Monitoring \& Automation Project
 
 
 
 \## Overview
 
-This repository demonstrates a hands-on DevOps learning journey focused on building real-world automation, monitoring systems, and CI/CD pipelines.
+This project is a DevOps-style system-monitoring and automation pipeline built using Bash, Python, GitHub Actions, and Docker.
 
 
 
-It combines Bash scripting, Python automation, and GitHub Actions to simulate production-style system monitoring workflows.
+It simulates a real-world infrastructure monitoring workflow by collecting system metrics and automating execution through CI/CD pipelines.
 
 
 
@@ -20,13 +20,15 @@ It combines Bash scripting, Python automation, and GitHub Actions to simulate pr
 
 \- Linux (Bash scripting)
 
-\- Python (automation + system monitoring)
+\- Python (system automation)
 
-\- Git \& GitHub
+\- Docker (containerization)
 
 \- GitHub Actions (CI/CD)
 
-\- psutil (system metrics)
+\- psutil (system metrics library)
+
+\- Git \& GitHub
 
 
 
@@ -38,33 +40,7 @@ It combines Bash scripting, Python automation, and GitHub Actions to simulate pr
 
 
 
-Local Development → GitHub → GitHub Actions CI Runner → System Monitoring Scripts → Logs + Artifacts
-
-
-
-\---
-
-
-
-\## Project Structure
-
-
-
-\### linux/
-
-Bash-based system monitoring script.
-
-
-
-\### python-scripts/
-
-Python-based system monitoring tool.
-
-
-
-\### .github/workflows/
-
-CI/CD pipeline using GitHub Actions.
+Developer Push → GitHub Actions CI → Docker Build → Container Execution → System Monitoring Output → Artifact Storage
 
 
 
@@ -90,13 +66,19 @@ CI/CD pipeline using GitHub Actions.
 
 \### CI/CD Automation
 
-\- Automated script execution on push
+\- Automated pipeline on every push
 
-\- Multi-language support (Bash + Python)
+\- Docker-based execution environment
 
-\- Log generation
+\- Log generation and artifact storage
 
-\- Artifact storage in GitHub Actions
+
+
+\### Containerization
+
+\- Fully portable Docker environment
+
+\- Reproducible system monitoring execution
 
 
 
@@ -106,15 +88,31 @@ CI/CD pipeline using GitHub Actions.
 
 \## What This Demonstrates
 
-\- Linux scripting ability
+\- DevOps automation fundamentals
 
-\- Python automation skills
+\- CI/CD pipeline design
 
-\- CI/CD pipeline understanding
+\- Linux + Python scripting
 
-\- DevOps workflow design
+\- Docker container workflows
 
-\- System monitoring concepts
+\- Infrastructure thinking
+
+
+
+\---
+
+
+
+\## Output
+
+Each pipeline run generates:
+
+\- System monitoring report
+
+\- Docker container logs
+
+\- CI/CD artifacts stored in GitHub Actions
 
 
 
@@ -124,19 +122,5 @@ CI/CD pipeline using GitHub Actions.
 
 \## Status
 
-Actively evolving DevOps portfolio project focused on automation, cloud workflows, and infrastructure concepts.
-
-
-
-\---
-
-
-
-\## Next Steps
-
-\- Add Docker containerization
-
-\- Add Kubernetes deployment basics
-
-\- Expand monitoring to cloud systems (AWS/Azure)
+Actively evolving DevOps portfolio project focused on infrastructure automation and cloud-ready workflows.
 
