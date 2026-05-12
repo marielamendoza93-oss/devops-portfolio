@@ -1,35 +1,30 @@
-name: Full System Monitoring CI
+name: DevOps Monitoring Pipeline (Dockerized)
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  system-monitor:
+  monitor:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup environment
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y bash python3 python3-pip
-          pip3 install psutil
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-      - name: Run Bash system monitor
+      - name: Build Docker image
+        run: docker build -t devops-monitor .
+
+      - name: Run container and capture logs
         run: |
-          chmod +x linux/system_monitor.sh
           mkdir -p logs
-          bash linux/system_monitor.sh > logs/bash_report.log
+          docker run devops-monitor > logs/container_report.log
 
-      - name: Run Python system monitor
-        run: |
-          python3 python-scripts/system_monitor.py > logs/python_report.log
-
-      - name: Upload all logs as artifacts
+      - name: Upload logs as artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: system-monitor-reports
+          name: devops-monitor-report
           path: logs/
